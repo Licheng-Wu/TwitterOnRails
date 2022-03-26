@@ -1,7 +1,7 @@
 class UsersController < ApplicationController
 
   def show
-    @user = User.find(params[:id])
+    @user = User.find(params[:id]) # Returns the user by the id
   end
 
   def new
@@ -11,6 +11,7 @@ class UsersController < ApplicationController
   def create
     @user = User.new(user_params)    # Not the final implementation!
     if @user.save
+      log_in @user
       flash[:success] = "Welcome to the Sample App!"
       redirect_to @user  # short for redirect_to user_url(@user)
     else
