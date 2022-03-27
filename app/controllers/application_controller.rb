@@ -4,4 +4,7 @@ class ApplicationController < ActionController::Base
   def hello
     render html: "hello, world!"
   end
+
+  puts "SENDGRID_USERNAME: #{ENV['SENDGRID_USERNAME']}"
+  puts "SENDGRID_PASSWORD: #{ENV['SENDGRID_PASSWORD']}"
 end
