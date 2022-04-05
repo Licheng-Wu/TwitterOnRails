@@ -1,8 +1,8 @@
 # Ruby on Rails Tutorial sample application
 
 This is the sample application for
-[*Ruby on Rails Tutorial:
-Learn Web Development with Rails*](https://www.railstutorial.org/)
+[_Ruby on Rails Tutorial:
+Learn Web Development with Rails_](https://www.railstutorial.org/)
 by [Michael Hartl](http://www.michaelhartl.com/).
 
 ## License
@@ -10,6 +10,19 @@ by [Michael Hartl](http://www.michaelhartl.com/).
 All source code in the [Ruby on Rails Tutorial](https://www.railstutorial.org/)
 is available jointly under the MIT License and the Beerware License. See
 [LICENSE.md](LICENSE.md) for details.
+
+## View the site
+
+Link: https://vast-brook-90140.herokuapp.com/
+
+To log into the website, you could use my account,
+Email: wlc.licheng@gmail.com
+Password: aaaaaa
+
+You could also create your own account to try. However, since the site is using the Free plan of Mailgun,
+please contact me to add your email to the list of authorized recipents.
+This would allow the site to send you emails to authenticate your account as well as to
+reset your password.
 
 ## Getting started
 
@@ -38,4 +51,4 @@ $ rails server
 ```
 
 For more information, see the
-[*Ruby on Rails Tutorial* book](https://www.railstutorial.org/book).
+[_Ruby on Rails Tutorial_ book](https://www.railstutorial.org/book).
