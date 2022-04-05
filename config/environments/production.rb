@@ -64,7 +64,36 @@ Rails.application.configure do
 
   # Ignore bad email addresses and do not raise email delivery errors.
   # Set this to true and configure the email server for immediate delivery to raise delivery errors.
-  # config.action_mailer.raise_delivery_errors = false
+  # Use SendGrid for Heroku
+  config.action_mailer.raise_delivery_errors = true
+  config.action_mailer.delivery_method = :smtp
+  host = 'https://vast-brook-90140.herokuapp.com'
+  config.action_mailer.default_url_options = { host: host }
+  ActionMailer::Base.smtp_settings = {
+    :address        => 'smtp.sendgrid.net',
+    :port           => '587',
+    :authentication => :plain,
+    :user_name      => ENV['SENDGRID_USERNAME'],
+    :password       => ENV['SENDGRID_API_KEY'],
+    :domain         => 'heroku.com',
+    :enable_starttls_auto => true
+  }
+
+  # Use MailGun for Heroku
+  # config.action_mailer.raise_delivery_errors = true
+  # host = 'vast-brook-90140.herokuapp.com'
+  # config.action_mailer.default_url_options = {host: "#{host}"}
+  # config.action_mailer.delivery_method = :smtp
+  # config.action_mailer.perform_deliveries = true
+  # config.action_mailer.smtp_settings = {
+  #   :user_name => ENV['MAILGUN_SMTP_LOGIN'],
+  #   :password => ENV['MAILGUN_SMTP_PASSWORD'],
+  #   :domain => "vast-brook-90140.heroku.com",
+  #   :address => 'smtp.mailgun.org',
+  #   :port => 587,
+  #   :authentication => :plain,
+  #   :enable_starttls_auto => true
+  # }
 
   # Enable locale fallbacks for I18n (makes lookups for any locale fall back to
   # the I18n.default_locale when a translation cannot be found).
@@ -88,35 +117,4 @@ Rails.application.configure do
 
   # Do not dump schema after migrations.
   config.active_record.dump_schema_after_migration = false
-
-  # Use SendGrid for Heroku
-  # config.action_mailer.raise_delivery_errors = true
-  # config.action_mailer.delivery_method = :smtp
-  # host = 'https://vast-brook-90140.herokuapp.com'
-  # config.action_mailer.default_url_options = { host: host }
-  # ActionMailer::Base.smtp_settings = {
-  #   :address        => 'smtp.sendgrid.net',
-  #   :port           => '587',
-  #   :authentication => :plain,
-  #   :user_name      => 'app254934816@heroku.com',
-  #   :password       => 'a13rq1om7056',
-  #   :domain         => 'heroku.com',
-  #   :enable_starttls_auto => true
-  # }
-
-  # Use MailGun for Heroku
-  config.action_mailer.raise_delivery_errors = true
-  host = 'vast-brook-90140.herokuapp.com'
-  config.action_mailer.default_url_options = {host: "#{host}"}
-  config.action_mailer.delivery_method = :smtp
-  config.action_mailer.perform_deliveries = true
-  config.action_mailer.smtp_settings = {
-    :user_name => ENV['MAILGUN_SMTP_LOGIN'],
-    :password => ENV['MAILGUN_SMTP_PASSWORD'],
-    :domain => "vast-brook-90140.heroku.com",
-    :address => 'smtp.mailgun.org',
-    :port => 587,
-    :authentication => :plain,
-    :enable_starttls_auto => true
-  }
 end
