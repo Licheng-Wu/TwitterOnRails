@@ -16,13 +16,15 @@ is available jointly under the MIT License and the Beerware License. See
 Link: https://vast-brook-90140.herokuapp.com/
 
 To log into the website, you could use my account,
+
 Email: wlc.licheng@gmail.com
+
 Password: aaaaaa
 
 You could also create your own account to try. However, since the site is using the Free plan of Mailgun,
 please contact me to add your email to the list of authorized recipents.
 This would allow the site to send you emails to authenticate your account as well as to
-reset your password.
+reset your password!
 
 ## Getting started
 
